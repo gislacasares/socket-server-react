@@ -41,7 +41,9 @@
    </script>
 
    <script>
-      const socket = io('http://localhost:8081');
+      //Acá va el path de la app
+      // const socket = io('http://localhost:8080');
+      const socket = io('https://react-socket-server-gic-8bc3ad5b97a3.herokuapp.com');
       
       //Referencia a elementos del DOM las pongo fuera del eventListener así se cargan solo una vez
       const formulario = document.querySelector('#miFormulario');
