@@ -42,9 +42,9 @@
 
    <script>
       //Acá va el path de la app
-      // const socket = io('http://localhost:8080');
-      const socket = io('https://react-socket-server-gic-8bc3ad5b97a3.herokuapp.com');
-      
+      const socket = io('http://localhost:8080');
+      // const socket = io('https://react-socket-server-gic-8bc3ad5b97a3.herokuapp.com');
+       
       //Referencia a elementos del DOM las pongo fuera del eventListener así se cargan solo una vez
       const formulario = document.querySelector('#miFormulario');
       const mensajes = document.querySelector('#misMensajes');
@@ -59,6 +59,10 @@
          
          socket.emit('mensaje-to-server', {
             texto: nuevoMensaje
+         });
+
+         socket.on('connect', () => {
+            console.log( 'Conectado' );
          });
 
          socket.on('mensaje-from-server', ( data ) =>{            
