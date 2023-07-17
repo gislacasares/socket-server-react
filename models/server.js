@@ -40,7 +40,7 @@ class Server {
       this.middlewares();
 
       //Inicializar Sockets
-
+      this.configurarSockets();
 
       //Inicializar Server
       this.server.listen( this.port, () => {
